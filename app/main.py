@@ -26,7 +26,8 @@ class CarWashStation:
                 rating_distance = self.average_rating / self.distance_from_city_center
                 income_car = car.comfort_class * dif_clean * rating_distance
                 income += income_car
-                car.clean_mark = self.clean_power
+                # car.clean_mark = self.clean_power
+                self.wash_single_car(car)
         income = Decimal(income)
         income = income.quantize(Decimal("0.1"), rounding=ROUND_HALF_UP)
         return float(income)
